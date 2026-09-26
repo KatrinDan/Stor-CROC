@@ -1,0 +1,115 @@
+body {
+    background-color: #0d0f12;
+    color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero {
+    background: linear-gradient(135deg,#1e222b 0% #11141a 100%);
+    padding: 90px 20px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #2d3139;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0d0f12;
+    padding: 15px 36px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
+    transition: 0.35s ease;
+}
+
+.hero-button:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.hero-button:active {
+    transform: translate(-1px);
+}
+
+.home-section {
+    text-align: center;
+}
+
+.home-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 45px;
+    color: #ffff;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background: #161a22;
+    border: 1px solid #242933;
+    border-radius: 16px;
+    padding: 35px 28px;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    background-color: #1c212c;
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.feature-card h3 {
+    font-size: 1.45rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color:#ffffff;
+}
+
+.feature-card p {
+    font-size:  0.95rem;
+    color: #9ca3af;
+    margin: 0;
+}

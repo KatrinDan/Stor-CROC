@@ -165,3 +165,32 @@ color: #ffffff;
 .logout-btn:active {
     transform: scale(0.98);
 }
+
+@media (max-width:768px) {
+    .prof-page {
+        padding: 20px 15px;
+    }
+
+    .prrofil-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .prof-avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-section {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .logout-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

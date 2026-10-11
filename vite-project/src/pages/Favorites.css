@@ -177,3 +177,58 @@
 .shop-button:hover {
     background-color: #008be6;
 }
+
+@media (max-width:768px) {
+    .favorites-page {
+        padding: 20px 15px;
+    }
+
+    .favorites-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .favorites-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .favorite-card {
+        padding: 16px;
+    }
+
+    .favorite-emoji {
+        font-size: 3.5rem;
+        margin: 15px 0 10px 0;
+    }
+}
+
+@media (max-width:480px) {
+    .favorites-bottom strong {
+        font-size: 1.1rem;
+    }
+
+    .favorite-card-button {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width:600px) {
+    .favorites-page {
+        padding: 20px 12px;
+    }
+
+    .favorites-grid {
+        grid-template-columns: repeat(auto-fill,minmax(180, 1fr));
+        gap: 16px;
+    }
+
+    .favorites-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

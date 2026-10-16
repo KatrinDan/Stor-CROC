@@ -40,29 +40,38 @@ function Cart() {
     window.location.reload();
   };
   const handleCheckoutClick = () => {
-   if(cartProducts.length === 0){
-    alert("Your cart is empty. Please add items to your cart before proceeding to checkout.");
-    return;
-   }
+    if (cartProducts.length === 0) {
+      alert("Your cart is empty. Please add items to your cart before proceeding to checkout.");
+      return;
+    }
     setShowCheckout(true);
-   }
+  };
+
   return (
     <div className="cart-page">
       <div className="cart-container">
         <div className="cart-header">
-         <div className="cart-header-content">
-          <div className="cart-title-row">
-            <span className="cart-title-icon"><ShoppingCart/></span>
-            <h1>ShoppingCart</h1></div>
-            <p className="cart-subtitle">Review your items and proceed to checkout when you are ready</p></div>
-            <div className="cart-items-badge">
-              <span className="cart-badge-icon"><ShoppingCart/></span>
-              <span className="cart-items-count">{cartIds.length}</span>
-              <span>items in your cart</span>
+          <div className="cart-header-content">
+            <div className="cart-title-row">
+              <span className="cart-title-icon">
+                <ShoppingCart />
+              </span>
+              <h1>ShoppingCart</h1>
             </div>
+            <p className="cart-subtitle">Review your items and proceed to checkout when you are ready</p>
+          </div>
+          <div className="cart-items-badge">
+            <span className="cart-badge-icon">
+              <ShoppingCart />
+            </span>
+            <span className="cart-items-count">{cartIds.length}</span>
+            <span>items in your cart</span>
+          </div>
         </div>
-       <Footprints size={35}/>
-          {cartProducts.length === 0 ? (
+
+        <Footprints size={35} />
+
+        {cartProducts.length === 0 ? (
           <div className="empty-cart">
             <div className="empty-cart-icon" />
             <h2>Your cart is empty</h2>
@@ -72,43 +81,46 @@ function Cart() {
             </a>
           </div>
         ) : (
-          <div className="cart-layout">
+          <div className="cart-container">
             <div className="cart-products">
               {cartProducts.map((product) => (
-                <article className="cart-card" key={product.id}>
+                <div className="cart-card" key={product.id}>
                   <div className="cart-product-image">{product.emoji}</div>
                   <div className="cart-product-info">
                     <h2>{product.name}</h2>
                     <p className="cart-product-price">${product.price.toFixed(2)}</p>
-                    <span className="cart-product-status"><CheckCircle size={15}/> In stock</span>
-                    <div className="cart-actions">
-                      <div className="quantity-control">
-                        <button className="quantity-control-button" onClick={() => decreaseQuantity(product.id)}>
-                          -</button>
-                        <span className="quantity">{getQuantity(product.id)}</span>
-                        <button className="quantity-control-button" onClick={() => increaseQuantity(product.id)}>
-                          +</button>
-                      </div>
-                      <button
-                        className="remove-button"
-                        onClick={() => removeFromCart(product.id)}
-                        aria-label={`Remove ${product.name}`}>
-                        <Trash2 size={18} />
+                    <span className="cart-product-status">
+                      <CheckCircle size={15} /> In stock
+                    </span>
+                  </div>
+                  <div className="cart-actions">
+                    <div className="quantity-control">
+                      <button className="quantity-control-button" onClick={() => decreaseQuantity(product.id)}>
+                        -
+                      </button>
+                      <span className="quantity">{getQuantity(product.id)}</span>
+                      <button className="quantity-control-button" onClick={() => increaseQuantity(product.id)}>
+                        +
                       </button>
                     </div>
+                    <button
+                      className="remove-button"
+                      onClick={() => removeFromCart(product.id)}
+                      aria-label={`Remove ${product.name}`}
+                    >
+                      <Trash2 size={18} />
+                    </button>
                   </div>
-                </article>
+                </div>
               ))}
-            </div>
 
-            <aside className="cart-summary">
+            <div className="cart-summary">
               <h2>Order Summary</h2>
               <div className="summary-row">
                 <span>Subtotal</span>
-              <span> ${total.toFixed(2)}</span>
+                <span> ${total.toFixed(2)}</span>
               </div>
               <div className="summary-row">
-                
                 <span>Shipping</span>
                 <span className="free">FREE</span>
               </div>
@@ -117,29 +129,30 @@ function Cart() {
                 <span>Total</span>
                 <strong>${total.toFixed(2)}</strong>
               </div>
-              <button className="checkout-button"
-                onClick={handleCheckoutClick}>
-                <CreditCard size={20}/>
-                Proceed to Checkout 
+              <button className="checkout-button" onClick={handleCheckoutClick}>
+                <CreditCard size={20} />
+                Proceed to Checkout
               </button>
-              {showCheckout &&(
-              <div className="credit-form">
-                <h3>Credit Card<CreditCard/></h3>
-                <input type="text" placeholder="Card holder name"/>
-                <input type="text" placeholder="Card number"/>
-                <div className="card-details">
-                  <input type="text" placeholder="MM/YY"/>
-                  <input type="text" placeholder="CWW"/>
+              {showCheckout && (
+                <div className="credit-form">
+                  <h3>
+                    Credit Card
+                    <CreditCard />
+                  </h3>
+                  <input type="text" placeholder="Card holder name" />
+                  <input type="text" placeholder="Card number" />
+                  <div className="card-details">
+                    <input type="text" placeholder="MM/YY" />
+                    <input type="text" placeholder="CWW" />
+                  </div>
+                  <button className="pay-button">Pay $ {total.toFixed(2)}</button>
                 </div>
-                <button className="pay-button">
-                  Pay $ {total.toFixed(2)}
-                </button>
-              </div>
               )}
               <a href="/products" className="continue-link">
                 <ArrowLeft /> Continue Shopping
               </a>
-            </aside>
+            </div>
+          </div>
           </div>
         )}
       </div>
